@@ -1,0 +1,111 @@
+<style>
+  .card-profile-stats {padding: 0;}
+</style>
+
+<div class="container-fluid mt--6" id="get-in-touch">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2">
+      <div class="card card-profile">
+        <img src="/static/assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="#">
+                <img src="/static/assets/img/theme/yutong.png" class="rounded-circle">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-header text-center border-0 pt-5 pt-md-5 pb-4 pb-md-4">
+          <div class="d-flex justify-content-between">
+            <!-- <a href="#" class="btn btn-sm btn-info  mr-4 ">Email</a>
+            <a href="#" class="btn btn-sm btn-default float-right">Wechat</a> -->
+          </div>
+        </div>
+        <div class="card-body pt-0">
+          <div class="row">
+            <div class="col">
+              <div class="card-profile-stats d-flex justify-content-center">
+                <div>
+                  <span class="heading">Email</span>
+                  <span class="description">hanyutong19951123@gmail.com</span>
+                </div>
+              </div>
+              <div class="card-profile-stats d-flex justify-content-center">
+                <div>
+                  <span class="heading">Wechat</span>
+                  <span class="description">hanyutong19951123</span>
+                </div>
+              </div>
+              <div class="card-profile-stats justify-content-center">
+                <div>
+                  <span class="heading">Github</span>
+                  <span class="description">YutongHan1123</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card">
+        <div class="card-header">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Contact Me</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form action="https://formsubmit.co/hanyutong19951123@gmail.com" method="POST">
+            <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                    <!-- <input type="text" id="input-username" class="form-control" placeholder="Enter your name"> -->
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email</label>
+                    <input type="email" name="email" placeholder="Email Address" class="form-control" required>
+                    <!-- <input type="email" name="email"  placeholder="Enter your email address" required> -->
+                    <!-- <input type="email" id="input-email"> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- topic -->
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-address">Subject</label>
+                    <input type="text" name="subject" placeholder="Something about dataviz?" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pl-lg-4">
+              <div class="form-group">
+                <label class="form-control-label">Message</label>
+                <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+              </div>
+            </div>
+            <div class="text-right">
+              <button class="btn btn-sm btn-primary" type="submit">Send Email</button>
+            </div>
+            <input type="hidden" name="_next" id="success" value="http://yutonghan.pythonanywhere.com/#get-in-touch">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "includes/footer.html" %}
+
+</div>

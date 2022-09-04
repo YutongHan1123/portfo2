@@ -1,0 +1,42 @@
+{% extends 'layouts/blog_demo.html' %}
+{% block blog_title %} WEEK10 CHAPTER10-11 {% endblock %}
+{% block blog_date %} 2018.10.30 {% endblock %}
+{% block blog_content %}
+
+<p>This week I continued to read chapter 10 and 11 in the truthful art. Knowledge is really useful and meaningful for me to deeply think about my second project, which topic is concerning car accident in America. And I want to create not only beautiful and stylistic, but also meaningful and informative data maps.</p>
+
+<p>It’s the first time I know about four popular map projections, which attracted my eyes at first glance: Mercator, Lambert cylindrical, Goode’s Homolosine and Mollweide.</p>
+
+<img src="../static/assets/img/projects/first_blog.png" alt="">
+<p class="img_sidenote">Mercator</p>
+
+<p>It’s totally an interesting fact that no map can be conformal and equal-area simultaneously. Why not amplify those continents proportionally as their shapes? Maybe it’s too hard to speculate the distance between continents, the size and shape of continents precisely and simultaneously.</p>
+
+<img src="../static/assets/img/blogs/blogs_wordpress12.png" alt="">
+<p class="img_sidenote">Note</p>
+
+<p>I also will remember the suggestion that Mercator is the default projection many online tools use. I will avoid it as possible as I can. Instead, I will use the recommendations in figure10.6.</p>
+
+<p>Because I want to focus on car accident in America as the topic of my project 2. Though figure10.6, Albers equal-area is most suitable to be used for an America data map and Mollweide is undoubtedly appropriate to be served as a world data map.</p>
+
+<p>Or maybe isarithmic maps and contour maps are better for me to interpret a sea of information fully? I will practice them and figure out the most advisable choice.</p>
+
+<p>Then I do love the sentence ”proportional symbol maps can be multivariate.” Using a second method of encoding, such as shading, color, virtually give readers a more nuanced understanding of the data. And I will use the method of the intervals of constant size to calculate my class size to create advisable choropleth maps.</p>
+<!--
+<p class="blog_sidenote">“there are no good or bad typefaces. There are appropriate and inappropriate typefaces.”—Thinking With Type(2004)</p> -->
+
+<div class="alert alert-primary" role="alert">
+  <p style="margin-bottom: 0;"><em>“there are no good or bad typefaces. There are appropriate and inappropriate typefaces.”</em></p>
+  <p style="text-align: right;"><em>—Thinking With Type(2004)</em></p>
+</div>
+
+<p>I have seen similar words for several times. It’s same for maps, diagrams, and so forth. And I agree with another sentence “Maps should be combined with linked charts or tables to achieve a richer understanding.”</p>
+
+<p>A map is not an objective depiction of reality. It is a symbolic interpretation of place and highlights the relationships between elements in space, either perceived or actual. It should reflect choices, biases, and agendas of the mapmaker. Things should be omitted, simplified, etc. for the map to make sense.</p>
+
+<p>In addition, the population play an important role when I want to compare the rate of car accidents’ happening in different states. Because of various population, I need to transforms the number of population into identical size, which is more equal to be compared with each other, ending up with a cartogram.</p>
+
+<p>By the way, I love the examples at the website flowingdata.com, especially <a href="https://ncase.me/remember/">How to Remember Anything Forever-ish</a> by nicky case. It’s so cute but so inspiring! I know why I learn faster in html and js courses as Khan Academy, due to interactive repetition.</p>
+
+<p>In the end, I will take the course of 3D Design and Graphics next semester. I can’t wait to learn more about data visualization like map varieties.</p>
+{% endblock %}

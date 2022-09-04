@@ -1,0 +1,92 @@
+{% extends 'layouts/blog_demo.html' %}
+{% block blog_title %} The Design Process of "From Ancient Cloth in China to Your Jeans" {% endblock %}
+{% block blog_date %} 2020.1.14 {% endblock %}
+{% block blog_content %}
+<h1>The idea</h1>
+<p>In July 2019, I read an interesting history book, <a href="https://book.douban.com/subject/30365847/"><em>A Minimalist History of China in the Museums</em></a>. The author, Jingwei Zhang, weaved the history into each story through cultural relics in the museums. In the chapter of the Qing Dynasty, I noticed the small blue fabric—Chinese indigo dyed clothes. To my surprise, the way of traditional indigo dyeing is the same as the way of modern jeans dyeing. The only different thing between them is the previous one is made by human hands, the latter one is made by the factory.</p>
+
+<p>The small blue fabric caught my eyes. I did want to tell a story related to my motherland but also related to America. So, I chose it as my topic, proposing some keypoints I’d like to dive into: what is indigo dyeing, the history of indigo dyeing, the process of making indigo dyeing, today’s indigo dyeing from China to other countries.</p>
+
+<p>But the first question came, where is the data? Actually, this question puzzled me during the whole project. Because the data about indigo is thin and scattered, very hard to be visualized. In this situation, I searched as many as books related to Chinese clothes, especially about indigo, exports, statistics.</p>
+<img src="../static/assets/img/blogs/from_ancient_books.png" alt="">
+<p class="img_sidenote">Parts of the Books I read</p>
+
+
+<h1>The data</h1>
+<p>After a sea of reading, I found there is data about the exports of cotton, wool and silk from China to the world, which was retrieved from the book, <a href="https://books.google.cn/books/about/Liu_shih_wu_nien_lai_Chung_kuo_kuo_chi_m.html?id=mFCLvQEACAAJ&redir_esc=y"><em>Statistics of China’s Foreign Trade During the Last Sixty-five Years</em></a>.</p>
+
+<p>And professor Cairo sent me an awesome link, <a href="https://shiny.tradestatistics.io/dashboard/?_inputs_&go=0&p=%22all%22&r=%22usa%22&y=%5B2014%2C2018%5D">the UN COMTRADE datasets</a>. In these datasets, I can download over 100 countries’ detailed imports and exports from 1962 to 2018. I chose to show the total exports and the main five categories of exports in China and the USA to the world in 1962 and 2018. </p>
+
+<p>In addition, I also found another useful website, <a href="https://dataweb.usitc.gov/">the USITC DataWeb</a>, which provides U.S. merchandise trade and tariff data. So I can download the imports of Chinese denim to the USA since 1996. With this data, I can compare the imports of Chinese denim to the USA in 1996 and 2018. </p>
+
+<img src="../static/assets/img/blogs/from_ancient_website.png" alt="">
+<p class="img_sidenote">Data from book, UN COMTRADE datasets and USITC DataWeb</p>
+
+<h1>The design</h1>
+<p>During reading those books and data, I felt like it’s better to use the line chart to link indigo dyeing and Chinese history in the beginning. And it’s also a great way to draw the process of the traditional indigo dyeing making. I drew the very rough designs on my iPad to capture that idea:</p>
+<p>Start with the line chart, then the process of indigo making (animate), then focus on the specific city—Nantong, which has a long history of indigo dyeing, the last part is the export from Nantong to the rest of the world.</p>
+<p>And I asked my friends in China to contact the curator of the Nantong indigo dyeing fabric museum. Because I read some book the curator wrote, he mentioned some data in the book. I wanted to get more data. Unfortunately, he replied to me with the data I already know. So I can’t create data visualization for Nantong</p>
+
+<img src="../static/assets/img/blogs/from_ancient_draw.png" alt="">
+<p class="img_sidenote">The hand drawing layout and the process of indigo making</p>
+
+<h1>The rough site</h1>
+<p>TAt the beginning of coding this website, I tried to firstly show the charts, then change their styles. So you will see some chaotic charts (´·_·`). They have different colors, different strokes, different opacities… I knew that, and at this step, I just needed the charts to show up.</p>
+<p>And I also met the first challenge—treemap. Since I wanted to compare the main 5 categories of exports in China and the USA to the world in 1962 and 2018, I needed to create 4 treemap charts. I made line charts and choropleth maps in May 2019. And because I made them by d3v3, the old version, I just needed to transfer the charts into <a href="https://iros.github.io/d3-v4-whats-new/#1">the d3v4 version</a>. But treemap is totally a different thing.</p>
+<p>Treemap is related to <a href="https://github.com/d3/d3-hierarchy">d3-hierarchy</a>. I was struggling with root, node, parent, child, and so forth. And nearly all the examples on the website used JSON files. But I was more confused after transferred my CSV files into JSON files, because they became messy, unreadable code. Even if the computer can read them, it added more troubles when I was debugging. They distressed me for several weeks.</p>
+<p>Thanks to professor Lenny, he sent me <a href="https://bl.ocks.org/denjn5/bb835c4fb8923ee65a13008832d2efed">the link of d3v4 treemap</a>, after I told him my problem. I was so lucky! Follow this treemap chart, I successfully made my own treemap chart! </p>
+
+<img src="../static/assets/img/blogs/from_ancient_roughchart.png" alt="">
+<p class="img_sidenote">The rough versions of my charts. Right two are my treemap charts:)</p>
+
+<h1>The drawing</h1>
+
+<p>After finishing the D3 parts, I drew the process of the traditional indigo dyeing making by Procreate. If you want to know more about Procreate, you can see my another blog -- <a href="#">About Procreate</a>. Then I used PS to animate it.</p>
+
+<img src="../static/assets/img/blogs/from_ancient_01.gif" alt="">
+<img src="../static/assets/img/blogs/from_ancient_02.gif" alt="">
+<img src="../static/assets/img/blogs/from_ancient_03.gif" alt="">
+<p class="img_sidenote">Rough n-gram chart I created through R</p>
+
+<p>And I also drew the background image for my title. The left side is Chinese traditional indigo dyeing fabrics, including dresses, waistcoats, pillowcases. The right side is modern indigo clothes, including jeans, denim jackets, denim shorts. I added the white at the bottom of the image to make my title and subtitle more visible.</p>
+
+<img src="../static/assets/img/blogs/from_ancient_backimg.png" alt="">
+<p class="img_sidenote">The background image</p>
+
+
+<h1>The style</h1>
+<p>Since I finished the D3 parts, it’s time to revise this website into a consistent style. Due to my sketch of the process of indigo making, I chose the sketch style. For the title, subtitle and chapter names, I finally chose <a href="https://fonts.google.com/specimen/Mansalva">Mansalva font</a>. It’s a handwritten font, working well in different sizes (some handwritten fonts works badly in the small size).</p>
+<img src="../static/assets/img/blogs/from_ancient_color.png" alt="">
+<p class="img_sidenote">The color palettes</p>
+
+<h1>The Interaction</h1>
+<p>Because I don’t want audiences to get tired while reading, I added some interactions to make them enjoy the reading. In the beginning, I added the effect of falling down from the top of the webpage for the title, in order to allow them to look at the background image first, then focus on the title.</p>
+<p>After that, the audiences can select an answer for the multiple-choice question, “There is something in common in these icons, can you find it?” In fact, every answer is correct. When they finish selection, the SpongeBob animation will pop up, and it will say, “Good job!” Why SpongeBob? Well, because I like it. And it’s yellow. I don’t forget to keep the consistency (๑•̀ㅂ•́)و✧</p>
+<p>I also added the tooltips for each chart. So, the audiences can hover or click on the parts they are interested in to get more info.</p>
+<img src="../static/assets/img/blogs/from_ancient_animation.gif" alt="">
+<p class="img_sidenote">The recoding for the interaction</p>
+
+<h1>Mobile friendly</h1>
+<p>It’s another challenge for me to overcome. To be honest, I’m not sure I have overcome this trouble, since charts become very small, hard to recognize and interact with on the smartphone. And I also tested many times with different browsers on Android, iOS phones. And they reflected different problems.</p>
+<p>Some I still have no idea how to fix them. And not just for phone, the requirements for a screen bigger than 600px and less than 1200px is different for desktops and smartphones. I spent several weeks to revise my website. Even today, I can’t say I finish this part. I still on the way. Fortunately, my hard work was rewarded.</p>
+<img src="../static/assets/img/blogs/from_ancient_mobile.gif" alt="" style="max-width: 500px;">
+<p class="img_sidenote">The recording of mobile version</p>
+
+<p>And here are my tips:</p>
+
+<ul>
+  <li>If you want to make your project mobile friendly, separate your CSS style into the desktop file and the mobile file. Or you will face a chaotic CSS layout, very hard to find the place you want to revise. </li>
+  <li>The margin, width, and height of D3 charts should not be actual px. I used innerWidth*0.1 or innerWidth*0.2 for margins. And I used innerWidth*0.8 and innerHeight/2 for chart’s width and height. </li>
+</ul>
+
+<h1>Final thoughts</h1>
+
+<ul>
+  <li>Ask the experts for suggestions. Last semester, I met professor Cairo twice a week, met professor Lenny once a week. I’ve said before but I have to say again, without their help I can’t make this project. Experts’ suggestions are so precious. I knew how ugly the original version is. So, I really appreciate their help.</li>
+  <li>Constantly revise the project. Well, experts’ suggestions are great, but it also means a lot of work. Keep working. When I was revising, I “hate” those suggestions. But when I see the result, it is worth it.</li>
+  <li>If you get stuck for a long time, turn to plan B. I was supposed to add scrolly-telling in my project in the beginning. But I was stuck for a long time. Then I used another way to achieve the goal. But I found it’s not very useful in this project. So, I deleted it. That often happens. Don’t stop at one bug.</li>
+</ul>
+
+<p>Hope this blog was an interesting read for you! Here is <a href="https://yutonghan1123.github.io/indigo/">the project link</a>.</p>
+
+{% endblock %}

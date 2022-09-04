@@ -1,0 +1,33 @@
+{% extends 'layouts/cn/base.html' %}
+
+{% block title %} 主页 {% endblock title %}
+
+{% block content %}
+
+<div class="header pb-6 d-flex align-items-center"
+     style="min-height: 500px; background-image: url(/static/assets/img/profile.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-default opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">你好，我是韩雨彤</h1>
+        <p class="text-white mt-0 mb-5">毕业后已作为数据记者工作一年半，在数据与稿子的海洋里狗刨</p>
+        <p class="text-white mt-0 mb-5">我喜欢数据，因为它无法说谎。我也喜欢故事，有谁讨厌听故事呢？希望每年，我能发掘出有意思、真实的数据故事</p>
+        <a href="#get-in-touch" class="btn btn-neutral">联系方式</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "includes/cn/projects.html" %}
+
+<br><br><br>
+<!-- Page content -->
+{% include "includes/cn/contacts.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

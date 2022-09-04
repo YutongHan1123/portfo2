@@ -1,0 +1,62 @@
+<div class="container-fluid mt--5">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row" id="projects_id">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% block javascripts %}
+<script type="text/javascript">
+  projects_data = '/static/assets/data/projects_list.csv';
+  // console.log(projects_data);
+
+  d3.csv(projects_data, function(data) {
+    var projects_div = document.getElementById('projects_id');
+    // console.log(projects_div);
+
+    for (var i = 0; i < data.length; i++) {
+      var div = document.createElement("div");
+      div.className = "col-xl-3 col-md-6";
+
+      var image = document.createElement("img");
+      image.src = "." + data[i].img_source;
+      image.className = "card-img-top";
+      div.appendChild(image);
+
+      var divChild = document.createElement("div");
+      divChild.className = "card-body";
+      div.appendChild(divChild);
+
+      var h5 = document.createElement("h5");
+      h5.className = "card-title";
+      h5.appendChild(document.createTextNode(data[i].title));
+      divChild.appendChild(h5);
+
+      var p = document.createElement("p");
+      p.className = "card-text";
+      p.appendChild(document.createTextNode(data[i].text));
+      divChild.appendChild(p);
+
+      var a1 = document.createElement("a");
+      a1.className = "btn btn-pink btn-sm";
+      a1.href = data[i].en_link;
+      a1.appendChild(document.createTextNode("English"));
+      divChild.appendChild(a1);
+
+      var a2 = document.createElement("a");
+      a2.className = "btn btn-pink btn-sm";
+      a2.href = "cn/" + data[i].cn_link;
+      a2.appendChild(document.createTextNode("中文"));
+      divChild.appendChild(a2);
+
+      // console.log(data[i].img_source);
+      projects_div.appendChild(div);
+
+    }
+  });
+</script>
+{% endblock javascripts %}

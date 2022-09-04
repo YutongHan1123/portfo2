@@ -1,0 +1,85 @@
+{% extends 'layouts/cn/base.html' %}
+
+{% block title %} 关于 {% endblock title %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/assets/css/horizontal_resume.css">
+<style media="screen">
+  a {
+    color: #F9C0C0;
+  }
+</style>
+{% endblock stylesheets %}
+{% block content %}
+
+<div class="header pb-6 d-flex align-items-center"
+     style="min-height: 500px; background-image: url(/static/assets/img/profile.jpg); background-size: cover; background-position: center top; padding-top: 20px;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-default opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10" style="width: 100%;">
+        <h1 class="display-2 text-white">你好，我是韩雨彤:)</h1>
+        <p class="text-white mt-0">一名数据可视化设计师，享受通过数据讲述故事的快乐。自迈阿密大学毕业后已北漂一年半。希望明年能够养一只猫。最近作品：</p>
+        <p class="text-white mt-0"><a href="https://datanews.caixin.com/2022-07-22/101916671.html">《苦夏！今夏为何持续热浪滚滚？（交互项目）》</a></p>
+        <p class="text-white mt-0"><a href="https://datanews.caixin.com/2022-06-28/101905287.html">《北京环球影城之困》</a></p>
+        <p class="text-white mt-0 mb-5"><a href="https://datanews.caixin.com/2022-07-09/101910344.html">《市场规模近千亿元 鲜花电商会一直火下去吗？（交互项目）》</a></p>
+        <a href="../resume" class="btn btn-neutral">PDF版简历</a>
+
+        <!-- online horizontal resume -->
+        <section id="process">
+            <div class="steps-timeline">
+                <div class="steps-columns">
+                    <h3>2017</h3>
+                    <div class="end-circle"></div>
+                    <div class="step-wrap">
+                        <div class="steps-stops">
+                            <div class="verticle-line"></div>
+                        </div>
+                    </div>
+                    <div class="inverted-pane-warp">
+                        <p>应用心理学</p>
+                        <p class="small-font">中国政法大学</p>
+                    </div>
+                </div>
+                <div class="steps-columns">
+                    <h3>2020</h3>
+                    <div class="step-wrap">
+                        <div class="steps-stops">
+                            <div class="verticle-line"></div>
+                        </div>
+                    </div>
+                    <div class="inverted-pane-warp">
+                        <p>交互媒体</p>
+                        <p class="small-font">迈阿密大学</p>
+                    </div>
+                </div>
+                <div class="steps-columns">
+                    <h3>Current</h3>
+                    <div class="step-wrap">
+                        <div class="steps-stops">
+                            <div class="verticle-line"></div>
+                        </div>
+                    </div>
+                    <div class="inverted-pane-warp">
+                        <p>数据可视化记者</p>
+                        <p class="small-font">财新</p>
+                    </div>
+                </div>
+            </div>
+          </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page content -->
+<div class="container-fluid mt--6">
+  <br><br><br>
+{% include "includes/cn/footer.html" %}
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

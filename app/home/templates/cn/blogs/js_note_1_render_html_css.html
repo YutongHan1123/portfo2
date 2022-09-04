@@ -1,0 +1,103 @@
+{% extends 'layouts/cn/blog_demo.html' %}
+{% block blog_title %} 浏览器渲染页面是如何实现的，包括渲染html，解析css，js文件 {% endblock %}
+{% block blog_date %} 2021.8.8 {% endblock %}
+{% block blog_content %}
+<h1>浏览器的组成</h1>
+<p>浏览器主要由7个组件组成：用户界面（User Interface）、浏览器引擎（Browser engine）、呈现引擎（Rendering engine）、网络（Networking）、用户界面后端（UI Backend）、JavaScript解释器（JavaScript）和数据存储（Data Persistence）。</p>
+
+<img src="/static/assets/img/blogs_cn/js_note_1_render1.png" alt="">
+<p class="img_sidenote">浏览器的主要组件</p>
+
+<h1>浏览器的多进程架构</h1>
+<p>值得注意的是，以 Chrome 为例，它由多个进程组成，每个进程都有自己核心的职责，它们相互配合完成浏览器的整体功能，每个进程中又包含多个线程，一个进程内的多个线程也会协同工作，配合完成所在进程的职责。</p>
+
+<img src="/static/assets/img/blogs_cn/js_note_1_process-thread.png" alt="">
+<p class="img_sidenote">进程是生产厂间，线程是厂间内一个个员工，既可以各自做事，也可以相互配合做事</p>
+
+<img src="/static/assets/img/blogs_cn/js_note_1_browser-arch.png" alt="">
+<p class="img_sidenote">不同浏览器的架构模型</p>
+
+<h1>页面渲染</h1>
+<p>一个页面被渲染有以下几步：</p>
+<ul>
+  <li>导航：用户通过在地址栏输入一个URL、点击一个链接、提交表单或者是其他的行为。（用户界面）</li>
+  <ul>
+    <li>DNS查找：浏览器通过服务器名称请求DNS进行查找，最终返回一个IP地址（浏览器引擎）</li>
+    <li>TCP Handshake：在获取到服务器IP地址后，浏览器通过TCP”三次握手“与服务器建立连接</li>
+    <img src="/static/assets/img/blogs_cn/js_note_1_三次握手简单理解.png" alt="">
+  </ul>
+  <li>响应：服务器收到请求，在建立连接的情况下，使用相关的响应头和HTML的内容进行回复</li>
+  <li>解析：浏览器通过网络接收的数据转换为DOM和CSSOM的步骤，通过渲染器把DOM和CSSOM在屏幕上绘制成页面</li>
+  <img src="/static/assets/img/blogs_cn/js_note_1_render2.png" alt="" style="max-width: 150px;">
+  <p class="img_sidenote">从源文档到解析树</p>
+
+  <div class="alert alert-primary" role="alert">
+      <p><em>注：很多时候，解析树还不是最终产品。解析通常是在翻译过程中使用的，而翻译是指将输入文档转换成另一种格式。编译就是这样一个例子。编译器可将源代码编译成机器代码，具体过程是首先将源代码解析成解析树，然后将解析树翻译成机器代码文档</em></p>
+  </div>
+
+  <ul>
+    <li>构建DOM树：首先处理HTML标记（文档树的根节点）并构造DOM树</li>
+    <img src="/static/assets/img/blogs_cn/js_note_1_render3.png" alt="">
+    <p class="img_sidenote">不同浏览器的架构模型</p>
+    <li>预加载扫描器：构建DOM数的过程占用了主线程。当请求高优先级资源，如CSS、JavaScript和web字体时，预加载扫描器发挥作用，它在后台检索资源，在主HTML解析器到达请求资源时，已经运行或下载，以达到减少阻塞的优化目的</li>
+    <div class="code">
+      <xmp><link rel="stylesheet" src="styles.css"/></xmp>
+      <xmp><script src="myscript.js" async></script></xmp>
+      <xmp><img src="myimage.jpg" alt="image description"/></xmp>
+      <xmp><script src="anotherscript.js" async></script></xmp>
+    </div>
+    <li>构建CSSOM树：与DOM相似，浏览器将CSS规则转换为可理解和使用的样式映射。CSSOM树包括来自用户代理样式表的样式。浏览器从适用于节点的最通用规则开始，并通过应用更具体的规则递归地优化计算的样式。换句话说，它级联属性值。</li>
+    <img src="/static/assets/img/blogs_cn/js_note_1_render4.png" alt="">
+    <p class="img_sidenote">解析CSS</p>
+    <p>如Firefox 使用的是人工编写的自上而下的解析器。这两种解析器都会将 CSS 文件解析成 StyleSheet 对象，且每个对象都包含 CSS 规则。CSS 规则对象则包含选择器和声明对象，以及其他与 CSS 语法对应的对象</p>
+    <img src="/static/assets/img/blogs_cn/js_note_1_render5.png" alt="">
+    <p class="img_sidenote">WebKit主流程</p>
+
+    <li>其他过程：包括JavaScript编译和构建辅助功能树</li>
+  </ul>
+
+  <li>渲染：渲染步骤包括样式、布局、绘制，在某些情况下还包括合成。在解析步骤中创建的CSSOM树和DOM树组合成一个Render树，然后用于计算每个可见元素的布局，然后将其绘制到屏幕上</li>
+  <ul>
+    <li>Style（样式）：将DOM和CSSOM组合成一个Render树，计算样式树或渲染树从DOM树的根开始构建，遍历每个可见节点</li>
+    <li>Layout（布局）：在渲染树上运行布局以计算每个节点的几何体。布局是确定呈现树中所有节点的宽度、高度和位置，以及确定页面上每个对象的大小和位置的过程</li>
+    <li>Paint（绘制）：将各个节点绘制到屏幕上，第一次出现的节点称为first meaningful paint。在绘制或光栅化阶段，浏览器将在布局阶段计算的每个框转换为屏幕上的实际像素。绘画包括将元素的每个可视部分绘制到屏幕上，包括文本、颜色、边框、阴影和替换的元素（如按钮和图像）</li>
+    <li>Compositing（合成）：当文档的各个部分以不同的层绘制，相互重叠时，必须进行合成，以确保它们以正确的顺序绘制到屏幕上，并正确显示内容</li>
+    <p>当页面继续加载资产时，可能会发生回流（回想一下我们迟到的示例图像），回流会触发重新绘制和重新组合.如浏览器窗口大小发生改变，元素尺寸或位置发生改变，激活CSS伪类等</p>
+  </ul>
+
+  <li>交互：如果加载包含JavaScript（并且延迟到onload事件激发后执行），则主线程可能很忙，无法用于滚动、触摸和其他交互</li>
+
+  <p>”Time to Interactive“（TTI）：测量从第一个请求导致DNS查找和SSL连接到页面可交互时所用的时间——可交互是”First Contentful Paint“之后的时间点。如果主线程正在解析、编译和执行JavaScript，则它不可用，因此无法及时（小于50ms）响应用户交互</p>
+  <p>因此，可能出现这种情况：图像加载很快，但js文件可能有2 MB，且用户的网络连接较慢。用户可以很快看到页面，但在下载、解析和执行脚本之前，就无法滚动，且对单击事件或屏幕点击没有响应。</p>
+</ul>
+
+<h1>知识拓展</h1>
+<p>HTML 无法用常规的自上而下或自下而上的解析器进行解析。 原因在于：</p>
+<ul>
+  <li>语言的宽容本质</li>
+  <li>浏览器历来对一些常见的无效 HTML 用法采取包容态度</li>
+  <li>解析过程需要不断地反复。源内容在解析过程中通常不会改变，但是在 HTML 中，脚本标记如果包含 document.write，就会添加额外的标记，这样解析过程实际上就更改了输入内容</li>
+</ul>
+
+<p>由于不能使用常规的解析技术，浏览器就创建了自定义的解析器来解析 HTML。 <a href="https://html.spec.whatwg.org/multipage/parsing.html">HTML5规范详细地描述了解析算法</a>。此算法由两个阶段组成：标记化和树构建。 标记化是词法分析过程，将输入内容解析成多个标记。HTML 标记包括起始标记、结束标记、属性名称和属性值。
+</p>
+<p>标记生成器识别标记，传递给树构造器，然后接受下一个字符以识别下一个标记；如此反复直到输入的结束。</p>
+
+<img src="/static/assets/img/blogs_cn/js_note_1_render6.png" alt="" style="max-width: 400px;">
+<p class="img_sidenote">HTML解析流程（摘自 HTML5 规范）</p>
+<img src="/static/assets/img/blogs_cn/js_note_1_render7.png" alt="">
+<p class="img_sidenote">对示例输入进行标记化</p>
+
+<p>WebKit 容错的示例：</p>
+<p>使用了"< /br>" 而不是 "< "b r>"</p>
+<img src="/static/assets/img/blogs_cn/js_note_1_render8.png" alt="">
+
+<p><em>注：错误处理在内部进行，用户不会看到此过程</em></p>
+
+<h1>参考资料</h1>
+<p><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/">浏览器的工作原理：新式网络浏览器幕后揭秘</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work">渲染页面：浏览器的工作原理</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/47407398">图解浏览器的基本工作原理</a></p>
+<p><a href="https://developers.google.com/web/updates/2018/09/inside-browser-part1">Inside look at modern web browser (part 1)</a></p>
+
+{% endblock %}

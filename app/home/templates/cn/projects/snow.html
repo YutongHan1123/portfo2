@@ -1,0 +1,35 @@
+{% extends 'layouts/cn/projects_demo.html' %}
+{% block background_image %}
+background-image: url(/static/assets/img/projects/snow.png);
+{% endblock background_image %}
+{% block blog_title %} 冰雪运动何以风靡全球 {% endblock %}
+{% block blog_date %} 2021.12.1 - 2022.2.3 {% endblock %}
+{% block blog_content %}
+
+<div class="projects_list">  
+  <h3>链接</h3>
+  <p><a href="https://datanews.caixin.com/interactive/2022/snow/">从野人运动到登上大雅之堂<br />冰雪运动何以风靡全球</a></p>
+
+  <h3>工具</h3>
+  <p class="tool">skrollr</p>
+  <p class="tool">Adobe Illustrator</p>
+  <p class="tool">jQuery</p>
+  <p class="tool">ArcGIS</p>
+</div>
+
+<p class="projects_right">一开始，我们本来是想把冰雪游的历史，放在冬奥运动的起源部分讲述。但随着整理的资料越来越多，我发现以冬奥运动小游戏的形式，塞下比较深度的历史内容，可能会显得庞杂、不易阅读。<br /><br />
+  因此，在征得领导同意后，我把冰雪游的历史单独摘出来，和小伙伴们一起扩充、制作了《从野人运动到登上大雅之堂 冰雪运动何以风靡全球》。</p>
+  
+<p>过程中，我和燕俊啃了不少论文，感慨圣莫里茨的美无与伦比，她还戏言以后结婚典礼要去圣莫里茨办；和必奇沟通了如何把结合插画和内容，我的表达不到位，害得他多费了些功夫拆分图层；和笑寅研究了如何将雪深叠加在中国地图上，我们的理想是做出浮雕模样的中国雪深地图，然而梦想很丰满，现实很骨感……</p>
+
+<img src="/static/assets/img/projects/理想vs现实.png" alt="">
+<p class="img_sidenote">左：理想；右：现实</p>
+
+<p>这个项目也是我第一次用scroll-telling的方式讲故事。Scrolli-telling比我想象中要简单不少（当然也是因为有韦梦之前的项目可以“借鉴”）。但我在上线之前，遇到了一个很折磨的bug。其实很简单，但是那时候我一个人在老家，谷歌不出答案，只能“大喊大叫”泄愤。搞得我妈妈以为我工作压力巨大，还叫我辞职回家啃老，哈哈～</p>
+
+<p>想具体看看我是怎么被折磨的，可以跳转到这儿：</p>
+<div class="alert alert-primary" role="alert" style="width: 280px;">
+  <a href="../blogs/snow_process" style="color: white;">“冰雪运动何以风靡全球”的制作过程</a>
+</div>
+
+{% endblock %}

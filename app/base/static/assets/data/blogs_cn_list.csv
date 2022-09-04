@@ -1,0 +1,8 @@
+title,text,link,date,img_source
+“冰雪运动何以风靡全球”的制作过程,一开始，我们冬奥小分队本来是想把冰雪游的历史，放在冬奥运动的起源部分讲述。但随着整理的资料越来越多，我发现以冬奥运动小游戏的形式，塞下比较深度的历史内容，可能会显得庞杂、不易阅读,/cn/blogs/snow_process,2022.4.1,./static/assets/img/projects/snow.png
+“你适合什么冬奥运动”的制作过程,2022年2月4日，北京冬奥会正式开幕。而在此之前的2021年10月，我在组会上提出了冬奥长期项目的想法...,/cn/blogs/winter_olympic_process,2022.3.6,./static/assets/img/blogs_cn/winter_olympic_process/滑雪.gif
+js周记:浏览器渲染页面是如何实现的，包括渲染html，解析css，js文件,浏览器主要由7个组件组成：用户界面（User Interface）、浏览器引擎（Browser engine）、呈现引擎（Rendering engine）...,/cn/blogs/js_note_1_render_html_css,2021.8.8,./static/assets/img/blogs_cn/js_note_1_render2.png
+一些关于开发的小吐槽,昨天来了个急活，做全国中高风险地区的数据汇总。我一看100多个，心想这不肯定得开发吗？结果要的急，国家数据源又不是开源的，就只能手打做图了。好家伙，这个又是“铂金汉宫”，那个又是“温莎城堡”。手给我打麻了...,/cn/blogs/about_develop_middle_high_risk,2021.8.6,./static/assets/img/blogs_cn/中高风险开发.png
+回国半年后,这是我回国后第一篇博文，本想在7月初发出来，但日子总是在我“玩一会”的想法中悄悄溜走……,/cn/blogs/blog1,2021.7.14,./static/assets/img/blogs_cn/new_home.jpeg
+《浪潮之巅》读书报告,这本书是本不错的极简互联网发展史，里面有很多普及性的介绍，方便我这样的门外汉入门。作者虽然是计算机专业的学生，但看待事物充满了商业思维，所以读来很有趣。但是读到后面能感觉作者虽然极力从商业角度去理解产业发展...,/cn/blogs/reading_report_1,2020.7.12,./static/assets/img/blogs_cn/浪潮之巅.jpeg
+沟通训练营-总结和反思,第一节课总结和反思：1.高能量姿势。我感觉和站军姿是一个道理。保持积极的姿势越久，整个人的精气神也就越好。即使不跟别人开口，别人也会有正面的印象。我去年报了几个月的一对一舞蹈班，老师对我的姿势要求很严格。那段时间的确...,/cn/blogs/summarizing01,2019.12.30,./static/assets/img/blogs_cn/logo02.png

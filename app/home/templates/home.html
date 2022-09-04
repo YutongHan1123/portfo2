@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+
+<div class="header pb-6 d-flex align-items-center"
+     style="min-height: 500px; background-image: url(/static/assets/img/profile.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-default opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">Hi, I'm Yutong Han</h1>
+        <p class="text-white mt-0 mb-5">One and a half years ago, I graduated at the University of Miami. Then I became a data journalist, finding data and writing stories per week.</p>
+        <p class="text-white mt-0 mb-5">Data-viz changed me. I enjoy telling a data-driven story through visualization. Look forward to being a great storyteller, even if I have struggled with code challenges so many times:p</p>
+        <a href="#get-in-touch" class="btn btn-neutral">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "includes/projects.html" %}
+
+<br/><br/><br/><br/>
+<!-- Page content -->
+{% include "includes/contacts.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,93 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Blogs {% endblock title %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/assets/css/blogs.css" type="text/css">
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="header pb-2 d-flex align-items-center"
+     style="min-height: 230px; background-image: url(/static/assets/img/profile.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-default opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white" style="min-width: 400px;">{% block blog_title %} title {% endblock %}</h1>
+        <p class="text-white">{% block blog_date %} date {% endblock %}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-2" style="margin: auto; max-width: 900px;">
+  <article>
+
+    {% block blog_content %}
+
+  {% endblock %}
+  </article>
+
+  <h1>See Also</h1>
+    <br>
+  <div class="row" id="projects_id">
+</div>
+
+
+
+
+<div class="container-fluid">
+  {% include "includes/footer.html" %}
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+<script type="text/javascript">
+  projects_data = '/static/assets/data/blogs_reco/01.csv';
+  console.log(projects_data);
+
+  d3.csv(projects_data, function(data) {
+    var projects_div = document.getElementById('projects_id');
+    // console.log(projects_div);
+
+    for (var i = 0; i < 4; i++) {
+      var div = document.createElement("div");
+      div.className = "col-xl-3 col-md-6";
+
+      var image = document.createElement("img");
+      image.src = "." + data[i].img_source;
+      image.className = "card-img-top";
+      div.appendChild(image);
+
+      var divChild = document.createElement("div");
+      divChild.className = "card-body";
+      div.appendChild(divChild);
+
+      var h5 = document.createElement("h5");
+      h5.className = "card-title";
+      h5.appendChild(document.createTextNode(data[i].title));
+      divChild.appendChild(h5);
+
+      var p = document.createElement("p");
+      p.className = "card-text";
+      p.appendChild(document.createTextNode(data[i].text));
+      divChild.appendChild(p);
+
+      var a1 = document.createElement("a");
+      a1.className = "btn btn-pink btn-sm";
+      a1.appendChild(document.createTextNode("Read More"));
+      divChild.appendChild(a1);
+
+      // console.log(data[i].img_source);
+      projects_div.appendChild(div);
+
+    }
+  });
+</script>
+{% endblock javascripts %}

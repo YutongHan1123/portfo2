@@ -1,0 +1,110 @@
+{% extends 'layouts/cn/blog_demo.html' %}
+{% block blog_title %} “你适合什么冬奥运动”的制作过程 {% endblock %}
+{% block blog_date %} 2022.3.6 {% endblock %}
+{% block blog_content %}
+<p>2022年2月4日，北京冬奥会正式开幕。而在此之前的2021年10月，我在组会上提出了冬奥长期项目的想法，领导们都非常支持。随即，我和同事张懿、实习生白雨欣成立了冬奥小分队。</p>
+
+<p>我们最初的想法，是根据冬奥各个项目运动员的身体数据（比如身高体重、手脚长度），让读者们选择对应天赋的运动。不同的运动项目，运动员的体型不同。借由读者不同的身材，也许可以勾起读者对冰雪运动的兴趣。</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/1.jpg" alt="">
+<p class="img_sidenote">不同类型的运动员对应不同的身材</p>
+
+<p>除了隔一日疫情数据、每周数字说mini供稿外，我们从构思到完成项目耗时约俩月。对我来说，代码难度不大，但项目小动画的难度可不小。由于我此前没有用AE制作过动画，全程在Skillshare和YouTube自学。虽然制作过程挺有意思，但我也频频深夜在公司破防。还好结果比较满意:)</p>
+
+<h1>想法</h1>
+<p>2021年10月的组会上，我提出了以冬奥运动为主题的长期项目想法，随即，我和同事张懿、实习生白雨欣成立了冬奥小分队。最初，我们参考了华盛顿邮报的<a href="https://www.washingtonpost.com/graphics/sports/olympics/olympic-body-types/"><em>Which Olympic Sports Fit Your Body?</em></a>，打算依据冬奥各个项目运动员的身体数据（如身高体重、手脚长度等），让读者们选择对应天赋的运动。然而，在搜索了相关论文和书籍后，我们不得不面对两个事实：冰雪运动员的身材数据差异性较小；普通人和冰雪运动员的身体数据相差较大。</p>
+
+<p>例如，在里约（夏季）奥运会中，男性体操运动员的平均身高为161cm，而男性篮球运动员的身高则接近2米。而在冬奥会中，男性滑雪运动员的身高普遍不低于178厘米，腿部肌肉极为发达。值得一提的是，在2022年北京冬奥会109个小项中，雪上项目（包括高山滑雪、越野滑雪、跳台滑雪、北欧两项、自由式滑雪、单板滑雪、冬季两项）共产生66枚金牌，超过本届冬奥会总金牌数的六成。</p>
+
+<p>换言之，大部分冰雪运动员都是滑雪运动员的身高。几乎每个人都是手长脚长的大高个。尽管肌肉分布有所差异，但也远甚普通人。</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/2.png" alt="">
+
+<p class="img_sidenote text-left">在《功能性训练 提升运动表现的动作练习和方案设计》一书中，作者强调滑冰相关运动需要巨大的髋部和腿部旋转力量</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/3.png" alt="">
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/4.png" alt="">
+
+<p class="img_sidenote text-left">在文献<a href="http://images.sport.org.cn/File/2019/04/01/1216023912.pdf"><em>基于世界级运动员身体形态、机能及素质特征的雪上项目冠军模型研究</em></a>中，滑雪运动员们普遍身高较高、下肢肌肉发达</p>
+
+<p>尽管运动员的身体数据与普通人相差甚远，但我们并非一无所获。幸运的是，上述论文出自体育科学——一则由国家体育总局主管、中国体育科学学会（China Sport Science Society）于1981年创办的体育综合性学术期刊。</p>
+
+<p>在我上体育科学官网浏览后发现，该期刊不仅线上可免费阅读下载，内容还十分专业详尽。于是我想，会不会已经有专家学者分析了不同冰雪运动的维度，而我只需要找到文献，就能从中获取灵感？</p>
+
+<p>随即，我翻阅了发表在体育科学上的冰雪运动相关文献。结果真让我找到了两篇对冰雪运动进行分类的论文：《挪威冰雪项目发展经验及对我国备战2022年北京冬奥会的启示》和《冬奥会单人项目运动员参赛制胜特征及对2022年北京冬奥会的参赛启示》。</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/5.png" alt="">
+
+<p class="img_sidenote text-left">在文献<a href="http://images.sport.org.cn/File/2021/02/19/0906496157.pdf"><em>挪威冰雪项目发展经验及对我国备战2022年北京冬奥会的启示</em></a>中，奥运会冰雪运动被分为耐力性、速度性、技巧性、战术性、对抗性、难美性为主导的项目类型</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/6.png" alt="">
+
+<p class="img_sidenote text-left">在文献<a href="http://images.sport.org.cn/File/2020/05/29/1329473175.pdf"><em>冬奥会单人项目运动员参赛制胜特征及对2022年北京冬奥会的参赛启示</em></a>中，奥运会冰雪运动被分为竞速类、技巧类和混合类 3 个类别</p>
+
+<p>依据两篇论文对冬奥会竞赛项目的分类，我将冬奥冰雪运动分为四大类：耐力型、竞速型、技巧型和其他。不同类型对应不同的冰雪运动。至此，我总算理清了冬奥小游戏的逻辑，可以着手冰雪运动项目的信息搜集。</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/7.png" alt="">
+<p class="img_sidenote">不同类型下有各自的细项分支提问</p>
+
+<h1>数据</h1>
+<p>在理清楚逻辑后，我们需要对对应的每个冰雪项目配备文字与图表。张懿、小白和我确定了各自的分工：越野滑雪、速度滑冰、短道速滑、钢架雪车由张懿负责；高山滑雪、花样滑冰、自由式滑雪由我负责；跳台滑雪、单板滑雪、冰壶、冰球由白雨欣负责。</p>
+
+<p>对于文字内容，我们有想过要不要以数据为主，但是竞技运动的数据往往来自于论文，内容较为艰涩枯燥。因此，我们将文字内容主要集中在历史发展、运动现状的科普，以数据图佐证。</p>
+
+<p>文字内容的科普依据主要源自<a href="https://olympics.com/"><em>奥林匹克官网</em></a>和<a href="https://www.beijing2022.cn/cn/olympics/ice_hockey.htm"><em>北京冬奥会和冬残奥会组织委员会</em></a>。其中，<a href="https://olympics.com/zh/news/olympic-alpine-skiing-at-beijing-2022-top-five-things-to-know"><em>你需要了解的五件事</em></a>、<a href="https://olympics.com/zh/news/the-differences-between-alpine-skiing-disciplines"><em>各项目之间的区别</em></a>、冬奥项目对对碰等都让我受益匪浅。当然，最令我高兴的是，在梳理自由式滑雪的文字内容时，我认识和了解了谷爱凌和苏翊鸣这两位优秀的滑雪运动员。后来，我在看到他们在北京冬奥会上取得不俗成绩，总有种“不愧是我看好的人”的自豪感，哈哈～此外，新华社的图解北京冬奥项目系列也带给我们一些灵感。</p>
+
+<h1>设计&动画</h1>
+<p>对于整个页面的设计，我在dribble和Behance上找了很多范例。</p>
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/8.png" alt="">
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/9.png" alt="">
+
+<p>基于上述例子，我制作了第一版的游戏UI界面：</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/10.png" alt="">
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/11.png" alt="">
+
+<p>但是制作了第一版后，我觉得首页有些臃肿，缺少动态的运动刺激感。而在同时，我发现了Cub Studio制作的奥林匹克项目<a href="https://www.cubstudio.com/canadian-olympic-guides"><em>Team Canada - Olympic Sports</em></a>，太酷了！完全是我喜欢的风格！</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/12.gif" alt="">
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/13.gif" alt="">
+
+<p>在我浏览他们网页的时候，还发现了他们在SkillShare上有发布动画制作的教程——<a href="https://www.skillshare.com/classes/Simple-Character-Animation-Create-a-Walk-Cycle-with-Duik/1552954793?via=referral-landing-page"><em>Simple Character Animation: Create a Walk Cycle with Duik</em></a>。更幸运的是，这个网站是首月免费的。我火速注册了账号，然后速成了AE动画。</p>
+
+<img class="small_img" src="/static/assets/img/blogs_cn/winter_olympic_process/walk cycle.gif" alt="">
+
+<p>上述动画很简单，基本上就是确定走路的高度的三个点，然后拼接起来就行。我在学完Walking Cycle后很膨胀，觉得自己全懂了，一边嚷嚷着“so easy”，一边开始制作高山滑雪的动画。然而，首次尝试做高山滑雪动画后我傻眼了，这个GIF不仅难看，还有点好笑：</p>
+
+<img class="small_img" src="/static/assets/img/blogs_cn/winter_olympic_process/滑雪.gif" alt="">
+
+<p>在调整一番后，我觉得该GIF药石难医，只能从头做起。第二版虽然比第一版好了一些，但还是有些奇怪，我只能又尝试了第三次。Practice makes perfect. 第三版总算是能入眼多了。</p>
+
+
+<p>高山滑雪仅仅是在平面上位移，比较简单。在我后续制作花样滑冰旋转和自由式滑雪的小动画时，Walking Cycle教授的内容就不够用了。于是我转战YouTube，四处搜刮教程。在看了一些视频后，我觉得下面三个是比较有用的：</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=AcEIT03Mrzk">An ULTIMATE guide to After Effects Character Rigging</a> 骨骼绑定的不同方法</li>
+  <li><a href="https://www.youtube.com/watch?v=NkdS4C_ieiU">360 Animation Tutorial in After Effects - Flat Design Characters 2D Fake Animation</a> 教你如何制作人体360度旋转效果的动画</li>
+  <li><a href="https://www.youtube.com/watch?v=tVzNMqBIgdw">How to create fake 3d head rotation animation using after effects tutorial</a> 教你如何制作头部360度旋转效果的动画</li>
+</ul>
+
+<p>让我感到有些遗憾的是自由式滑雪。我总觉得Cub Studio应该不会用上述fake 3d教程里，拖拽点的方式制作类3D的运动动画。但是我没找到更专业的制作方式。所以尽管自由式滑雪的效果我不太满意，由于时间限制，也只能就此作罢。</p>
+
+<p>在制作GIF的同时，我们也给各个运动项目配图和图表。其中，不少配图我参考Pinterest上<a href="https://br.pinterest.com/visualoop/olympics-infographics/">Olympics Infographics</a>a>相关的一些海报设计。此外，不少图标我是在下载了Flaticon里的svg图标后修改而成。</p>
+
+<h1>开发</h1>
+<p>网页开发贯穿了项目的始终。开发的难度不大，主要是用jQuery把选项和对应的运动类型串起来。我印象最深刻的是项目上线后，怎么会有这么多bug……好好的新年，我天天抱着电脑改bug，实在是工作使我快乐……</p>
+
+<p>比如，项目刚上线没多久，我就接到不能用五环标志的通知——新闻报道使用五环的颜色必须是白色的，且不能同时展示媒体品牌。</p>
+
+<img src="/static/assets/img/blogs_cn/winter_olympic_process/五环.jpg" alt="">
+
+<h1>感悟</h1>
+<p>总的来说，作为我毕业后首次负责的长期项目，“你适合什么冬奥运动”的完成度较高，文字、交互、图表、动画较好地融合在一起，让读者能够轻快地了解各项冰雪运动。但在完成该项目，我觉得仍有两点不足：</p>
+<ul>
+  <li>由于我此前没有用AE制作过动画，对制作动画的耗时太过自信。原本我想每个对应的小项目都能配一个动画，但是后来发现时间不够，只能作罢</li>
+  <li>相较于其他一些以奥运会为主题的数据可视化项目，“你适合什么冬奥运动“的数据维度较为单一，如果能够在读者做完测试、看完对应的小项目后，能够有更丰富的延展，也许这个项目会更有深度</li>
+</ul>
+
+
+{% endblock %}

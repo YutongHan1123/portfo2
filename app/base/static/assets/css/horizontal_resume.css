@@ -1,0 +1,165 @@
+#process {
+margin-top: 50px;
+margin-bottom: 40px;
+overflow-x: hidden;
+max-width: 1400px;
+}
+
+#process .section-heading {
+margin-bottom: 40px;
+min-height: 20px;
+}
+
+.steps-columns h3, .steps-columns p {
+text-align: center;
+margin: 0;
+}
+
+.pane-warp {
+height: 140px;
+width: 25px;
+margin-left: 20%;
+margin-top: 20px;
+}
+
+.steps-pane {
+height: 140px;
+width: 140px;
+box-shadow: 7px 0px 5px #bcbcbc;
+}
+
+.inverted-pane-warp {
+height: 100px;
+width: fit-content;
+}
+
+.small-font {
+  font-size: 14px;
+  font-style: italic;
+}
+
+@media(min-width: 601px) {
+.steps-timeline {
+    border-top: 2px solid #ffff;
+    padding-top: 20px;
+    margin-top: 40px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.steps-columns {
+    float: left;
+    width: 30%;
+    margin-top: -60px;
+    color: #fff;
+}
+
+.steps-columns h3 {
+  color: #fff;
+}
+.step-wrap {
+    height: 30px;
+    width: 50px;
+    border-radius: 50%;
+    background: transparent;
+    margin-top: -20px;
+    margin-left: calc(49.5% - 10px);
+    /* margin-top: 27px; */
+    /* border: 2px solid #fc6429; */
+}
+.verticle-line {
+    position: absolute;
+    height: 57px;
+    width: 5px;
+    margin-left: 10px;
+    marker-top: 10px;
+}
+.steps-stops {
+    height: 20px;
+    width: 20px;
+    margin-top: 25px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: rgba(0, 0, 0, .7);
+}
+.end-circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 19px;
+    margin-left: -10px;
+}
+.inverted-end-circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 19px;
+    margin-left: 18.1%;
+}
+}
+
+@media(max-width: 600px) {
+#process {
+    width: 80%;
+}
+.steps-timeline {
+    border-left: 3px solid #ffff;
+    margin: 0 0 0 35px;
+    padding: 10px 0;
+    width: fit-content;
+}
+
+.steps-columns h3 {
+  margin: 0 0 0 10px;
+  display: inline;
+  text-align: left;
+  color: #fff;
+}
+
+.steps-columns p {
+  text-align: left;
+  margin-left: 34px;
+  color: #fff;
+}
+
+.inverted-pane-warp {
+  width: 200px;
+  height: 100%;
+  margin: 0 0 40px 0;
+}
+
+.step-wrap,
+.steps-stops {
+    float: left;
+}
+
+.steps-stops {
+    height: 25px;
+    width: 25px;
+    margin: 5px -14px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: rgba(0, 0, 0, .7);
+}
+.step-wrap {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: transparent;
+}
+.end-circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -45px;
+}
+.inverted-end-circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 280px;
+    margin-left: 15px;
+}

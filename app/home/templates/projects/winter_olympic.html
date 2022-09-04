@@ -1,0 +1,42 @@
+{% extends 'layouts/projects_demo.html' %}
+
+{% block background_image %}
+background-image: url(/static/assets/img/projects/winter_olympic.gif);
+{% endblock background_image %}
+
+{% block blog_title %} What Winter Olympic Sports You Fit? {% endblock %}
+{% block blog_date %} 2021.11.1 - 2022.1.26 {% endblock %}
+{% block blog_content %}
+
+<div class="projects_list">
+  <h3>Link</h3>
+  <p><a href="https://datanews.caixin.com/interactive/2022/winter-olympics-game/">What Winter Olympic Sports You Fit?</a></p>
+
+  <h3>Tool</h3>
+  <p class="tool">Adobe After Effects</p>
+  <p class="tool">Adobe Illustrator</p>
+  <p class="tool">jQuery</p>
+</div>
+
+<p class="projects_right">On February 4, 2022, the Beijing Winter Olympics officially opened. In October of the previous year, I proposed the idea: a long-term project for the coming Winter Olympics at the group meeting. Bosses were supportive. Immediately, my colleague Yi Zhang, intern Yuxin Bai and I set up a Winter Olympics team. <br><br>
+Our initial idea was to let readers view sports that corresponded to their talents based on the physical data (e.g., height and weight, length of arms and legs) of athletes in various Winter Olympics sports. Inspired by the Washington Post's interactive project: <a href="https://www.washingtonpost.com/graphics/sports/olympics/olympic-body-types/"><em>Which Olympic Sports Fit Your Body?</em></a></p>
+<br><br>
+
+<p>But after searching for the data, we found out that the gap of body data is too big between winter athletes and the ordinary people. In this case, we changed the way. More details you can see in this article: <a href="../blogs/winter_olympic_process"><em>the Process of What Winter Olympic Sports You Fit?</em></a></p>
+
+<p>In addition to working on the every-other-day epidemic reports, the weekly data news and mini articles, I spent about two months focusing on this project.</p>
+
+<p>The code is not a big deal, but the animation of winter sports is the biggest challenge. Since I had never used AE to make animations before, I taught myself the whole process in Skillshare and YouTube. Although the production process was quite interesting, I often freaked out and yelled at night in the company.</p>
+
+<img src="/static/assets/img/blogs_cn/blogs_动画折磨.jpeg" alt="" style="max-width: 640px;">
+<p class="img_sidenote">Everyday I was strugged with the Animation</p>
+
+<p>Luckily, the result is more satisfying :) hope you like the project.</p>
+
+<p>If you want to know the exact process of making the project, please click 👇</p>
+
+<div class="alert alert-primary" role="alert" style="text-align: center; max-width: 480px;" >
+  <a href="../blogs/winter_olympic_process" style="color: white;">the Process of What Winter Olympic Sports You Fit?</a>
+</div>
+
+{% endblock %}
